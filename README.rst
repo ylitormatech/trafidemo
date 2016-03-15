@@ -2,40 +2,28 @@
 Trafidemo
 ===============================
 
-A flasky app.
+CURRENT STATUS: UNDER DEVELOPMENT. DEMO NOT FULLY WORKING
 
+This is demo app to show functionality of several features:
+1. Flask with cookiecutter-flask project template
+2. Loading vehicle data (zip, csv and excel formats) from finnish Trafi into local MongoDB
+3. Publishing data with API
+4. Simple Angular 1 and ReactJS UI that uses API
 
-Quickstart
-----------
+Rest of information in Finnish...
 
-First, set your app's secret key as an environment variable. For example, example add the following to ``.bashrc`` or ``.bash_profile``.
-
-.. code-block:: bash
-
-    export TRAFIDEMO_SECRET='something-really-secret'
-
-
-Then run the following commands to bootstrap your environment.
-
-
-::
+Asennusohjeet
+-------------
 
     git clone https://github.com/ylitormatech/trafidemo
     cd trafidemo
     pip install -r requirements/dev.txt
     bower install
-    python manage.py server
-
-You will see a pretty welcome screen.
-
-Once you have installed your DBMS, run the following to create your app's database tables and perform the initial migration:
-
-::
-
     python manage.py db init
     python manage.py db migrate
     python manage.py db upgrade
     python manage.py server
+    python load_trafidata_localMongoDB.py
 
 
 
