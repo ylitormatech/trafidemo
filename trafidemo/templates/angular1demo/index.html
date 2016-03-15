@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+  <html data-ng-app="trafiApp">
+  <head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/"/>
+    <title>Trafidata</title>
+
+      <meta name="description" content="{% block meta_description %}{% endblock %}">
+  <meta name="author" content="{% block meta_author %}{% endblock %}">
+
+  <!-- Mobile viewport optimized: h5bp.com/viewport -->
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='libs/font-awesome4/css/font-awesome.min.css') }}">
+  {% assets "css_all" %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}">
+  {% endassets %}
+
+  {% block css %}{% endblock %}
+
+  </head>
+  <body>
+  {% block body %}
+
+    <div class="container">
+      <div class="row top-buffer">
+        <div class="col-xs-12">
+
+          <div ng-view></div> <!-- This is where our views will load -->
+
+        </div>
+      </div>
+    </div>
+    <!-- JavaScript at the bottom for fast page loading -->
+{% assets "js_all" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+{% endassets %}
+{% block js %}{% endblock %}
+
+
+  {% endblock %}
+  </body>
+</html>

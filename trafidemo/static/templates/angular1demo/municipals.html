@@ -1,0 +1,22 @@
+<div class="jumbotron">
+    <h6 class="display-4 ">Trafi (Angular 1 demo)</h6>
+    <p class="lead">Flask (Jinja2) + Bootstrap v4 + Angular 1. Data haetaan apista /api/trafi/</p>
+    <hr class="m-y-2">
+    <div class="lead">
+        <div class="col-lg-10 col-lg-offset-1">
+            <input ng-model="query" type="text" class="form-control" placeholder="Kunnan nimi...">
+        </div>
+    </div>
+</div>
+<table class="table movietable">
+    <tr>
+        <td>Kunta</td>
+        <td>Autojen lukumäärä</td>
+        <td>Ajokilometrit keskiarvo</td>
+    </tr>
+    <tr ng-repeat="municipal in municipals | filter:query">
+        <td>{a municipal.kunta a}</td>
+        <td>{a municipal.count a} kpl</td>
+        <td>{a municipal.avg a}km</td>
+    </tr>
+</table>
