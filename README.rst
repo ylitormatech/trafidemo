@@ -10,7 +10,9 @@ This is demo app to show functionality of several features:
 3. Publishing data with API
 4. Simple Angular 1 and ReactJS UI that uses API
 
-Rest of information in Finnish...
+In Finnish...
+
+
 
 Asennusohjeet
 -------------

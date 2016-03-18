@@ -12,11 +12,15 @@
     <tr>
         <td>Kunta</td>
         <td>Autojen lukumäärä</td>
-        <td>Ajokilometrit keskiarvo</td>
+        <td>Co2 (p 25%)</td>
+        <td>Co2 (p 50%)</td>
+        <td>Co2 (p 75%)</td>
     </tr>
     <tr ng-repeat="municipal in municipals | filter:query">
         <td>{a municipal.kunta a}</td>
-        <td>{a municipal.count a} kpl</td>
-        <td>{a municipal.avg a}km</td>
+        <td>{a municipal.lkm a} kpl</td>
+        <td>{a municipal.data.co2.p25 a}</td>
+        <td>{a municipal.data.co2.p50 a}</td>
+        <td>{a municipal.data.co2.p75 a}</td>
     </tr>
 </table>

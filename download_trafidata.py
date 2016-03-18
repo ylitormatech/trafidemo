@@ -10,12 +10,12 @@ import io
 print("{}: Avaa tietokanta lz_trafi paikallisessa MongoDB palvelimessa".format(datetime.datetime.now()))
 client = pymongo.MongoClient()
 db = client.lz_trafi
-rawcollection = db.cars
+rawcollection = db.autot
 
 
 
 print("{}: Lataa kuntien nimet trafin ajoneuvojen luokitukset Excel tiedostosta".format(datetime.datetime.now()))
-citylistcollection = db.citylist
+citylistcollection = db.kunnat
 dfcitylist = pd.read_excel('http://www.trafi.fi/filebank/a/1433135757/74ee1d8be49178dbee2fc7df128bd5d6/17629-avoin_data_ajoneuvojen_luokitukset.xls',
                    'kunta',
                    skiprows=3,
@@ -24,7 +24,7 @@ dfcitylist.columns = ['kunta', 'kuntanimi']
 citylistcollection.insert_many(dfcitylist.to_dict('records'))
 
 print("{}: Lataa varien nimet trafin ajoneuvojen luokitukset Excel tiedostosta".format(datetime.datetime.now()))
-colorlistcollection = db.colorlist
+colorlistcollection = db.varit
 dfcolorlist = pd.read_excel('http://www.trafi.fi/filebank/a/1433135757/74ee1d8be49178dbee2fc7df128bd5d6/17629-avoin_data_ajoneuvojen_luokitukset.xls',
                    'VARI',
                    skiprows=3,
@@ -33,7 +33,7 @@ dfcolorlist.columns = ['vari', 'varinimi']
 colorlistcollection.insert_many(dfcolorlist.to_dict('records'))
 
 print("{}: Lataa käyttövoiman nimet trafin ajoneuvojen luokitukset Excel tiedostosta".format(datetime.datetime.now()))
-fuellistcollection = db.fuellist
+fuellistcollection = db.polttoaineet
 dffuellist = pd.read_excel('http://www.trafi.fi/filebank/a/1433135757/74ee1d8be49178dbee2fc7df128bd5d6/17629-avoin_data_ajoneuvojen_luokitukset.xls',
                    'KAYTTOVOIMA',
                    skiprows=3,
@@ -41,7 +41,7 @@ dffuellist = pd.read_excel('http://www.trafi.fi/filebank/a/1433135757/74ee1d8be4
 dffuellist.columns = ['kayttovoima', 'kayttovoimanimi']
 fuellistcollection.insert_many(dffuellist.to_dict('records'))
 
-print("{}: Lataa henkilöautojen tiedot csv tiedostosta, joka sijaitsee Trafin sivuilla zip tiedoston sisällä".format(datetime.datetime.now()))
+print("{}: Lataa yli 5 miljoonan ajoneuvon tiedot csv tiedostosta, joka sijaitsee Trafin sivuilla zip tiedoston sisällä".format(datetime.datetime.now()))
 r = requests.get('http://wwwtrafifi.97.fi/opendata/AvoinData20160101.zip')
 z = zipfile.ZipFile(io.BytesIO(r.content),'r')
 df = pd.read_csv(z.open(z.namelist()[0]),

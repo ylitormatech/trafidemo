@@ -10,9 +10,13 @@ trafiApp.config(['$routeProvider',
             templateUrl: 'static/templates/angular1demo/municipals.html',
             controller: 'MunicipalListController'
       }).
-          when('/municipals/:id/', {
+          when('/municipals/:municipal/', {
               templateUrl: 'static/templates/angular1demo/municipal-view.html',
               controller: 'MunicipalViewController'
+      }).
+          when('/municipals/:municipal/:year/', {
+              templateUrl: 'static/templates/angular1demo/municipal-view.html',
+              controller: 'MunicipalYearViewController'
       }).
           otherwise({
               redirectTo: '/municipals/'
@@ -41,9 +45,11 @@ trafiApp.factory('municipals', function($http){
     }
   }
 });
-
+var xx;
 trafiApp.controller('MunicipalListController', function($scope, $http, municipals){
+
    municipals.list(function(municipals){
        $scope.municipals = municipals.data;
    });
+
 });

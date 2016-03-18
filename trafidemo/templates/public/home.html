@@ -6,27 +6,31 @@
 
   <h1>Welcome to Trafidemo</h1>
 
-  <p>This is a starter Flask template. It includes Bootstrap 3, jQuery 2, Flask-SQLAlchemy, WTForms, and various testing utilities out of the box.</p>
+  <p>Teknologiademo, jossa demonstroidaan Flaskin käyttöä yhdessä Angularin ja Reactjs:n kanssa.Datana käytetään Trafin avointadataa. joka sisältää yli 5 miljoonan kulkuneuvon tiedot</p>
   <p><a href="https://github.com/sloria/cookiecutter-flask" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
 </div><!-- /.jumbotron -->
 
 <div class="body-content">
   <div class="row">
     <div class="col-lg-4">
-      <h2><i class="fa fa-code"></i> Bootstrap 3</h2>
-      <p>Sleek, intuitive, and powerful mobile-first front-end framework for faster and easier web development.</p>
-      <p><a class="btn btn-default" href="http://getbootstrap.com/">Official website &raquo;</a></p>
+      <h2>Angular 1 demo</h2>
+      <p>Yksinkertainen Angular esimerkki, joka listaa kaikkien kuntien autojen autojen lukumäärät ja hiilidioksidipäästöjen kvartiilit </p>
+      <p><a class="btn btn-default" href="http://127.0.0.1:5000/trafiangular/">Demo &raquo;</a></p>
+    </div>
+         <div class="col-lg-4">
+      <h2>ReactJS demo</h2>
+      <p>Yksinkertainen ReactJS esimerkki, joka listaa kaikkien kuntien autojen autojen lukumäärät ja ajokilometrien, hiilidioksidipäästöjen ja tehon kvartiilit </p>
+      <p><a href="http://wtforms.simplecodes.com/" class="btn btn-default" href="#">EI VIELÄ KÄYTÖSSÄ</a></p>
     </div>
     <div class="col-lg-4">
-      <h2><i class="fa fa-flask"></i> SQLAlchemy</h2>
-      <p>SQLAlchemy is the Python SQL toolkit and Object Relational Mapper that gives application developers the full power and flexibility of SQL.</p>
-      <p><a href="http://www.sqlalchemy.org/" class="btn btn-default" href="#">Official website &raquo;</a></p>
+      <h2>API</h2>
+      <p>Api, joka näyttää trafin datan kuntakohtaiset yhteenvedot hiilidioksidipäästöistä, ajokilometreistä ja auton tehosta</p>
+      <div><a href="http://127.0.0.1:5000/api/trafi/" class="btn btn-default" href="#">Kaikki kunnat &raquo;</a></div>
+      <div><a href="http://127.0.0.1:5000/api/trafi/Tampere/" class="btn btn-default" href="#">Tampere &raquo;</a></div>
+      <div><a href="http://127.0.0.1:5000/api/trafi/Tampere/2014/" class="btn btn-default" href="#">Tampere (vuosimallit 2014) &raquo;</a></div>
+
    </div>
-    <div class="col-lg-4">
-      <h2><i class="fa fa-edit"></i> WTForms</h2>
-      <p>WTForms is a flexible forms validation and rendering library for python web development.</p>
-      <p><a href="http://wtforms.simplecodes.com/" class="btn btn-default" href="#">Official website &raquo;</a></p>
-    </div>
+
   </div><!-- /.row -->
 </div>
 {% endblock %}
