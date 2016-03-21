@@ -7,13 +7,14 @@ CURRENT STATUS: UNDER DEVELOPMENT.
 ::
 
     This is demo app to show functionality of following features:
-    1) Flask project created by using cookiecutter and .. _cookiecutter-flask: https://github.com/sloria/cookiecutter-flask template
+    1) Flask project created by using cookiecutter and 'cookiecutter-flask'_ template
     2) Using Pandas and Numpy to load data of 5M+ vehicles from finnish Trafi into local MongoDB.
     3) Grouping data by municipal and by municipal+year and calculating percentiles (quantile) for Co2, power and mileage
     4) Simple API to share grouped data
     5) Simple Angular 1 application to show data from API
     6) Simple React application to show data from API (UNDER DEVELOPMENT)
 
+.. _cookiecutter-flask: https://github.com/sloria/cookiecutter-flask
 
 Installation
 -------------
