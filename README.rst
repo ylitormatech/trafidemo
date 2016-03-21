@@ -2,21 +2,20 @@
 Trafidemo
 ===============================
 
-CURRENT STATUS: UNDER DEVELOPMENT. DEMO NOT FULLY WORKING
+CURRENT STATUS: UNDER DEVELOPMENT.
 
 ::
 
-    This is demo app to show functionality of several features:
-    1) Flask with cookiecutter-flask project template
-    2) Loading vehicle data (zip, csv and excel formats) from finnish Trafi into local MongoDB
-    3) Publishing data with API
-    4) Simple Angular 1 and ReactJS UI that uses API
+    This is demo app to show functionality following features:
+    1) Flask project created by using cookiecutter and https://github.com/sloria/cookiecutter-flask template
+    2) Using Pandas and Numpy to load data of 5M+ vehicles from finnish Trafi into local MongoDB.
+    3) Grouping data by municipal and by municipal+year and calculating percentiles (quantile) for Co2, power and mileage
+    4) Simple API to share grouped data
+    5) Simple Angular 1 application to show data from API
+    6) Simple React application to show data from API (UNDER DEVELOPMENT)
 
-In Finnish...
 
-
-
-Asennusohjeet
+Installation
 -------------
 
 ::
@@ -28,9 +27,11 @@ Asennusohjeet
     python manage.py db init
     python manage.py db migrate
     python manage.py db upgrade
-    python manage.py server
-    python load_trafidata_localMongoDB.py
 
+    python download_trafidata.py # Loads data from Trafi into local MongoDB
+    python load_trafidata.py # Groups data and calculates percentiles(quantiles)
+
+    python manage.py server
 
 
 Deployment
