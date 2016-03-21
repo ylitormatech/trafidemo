@@ -6,8 +6,8 @@ CURRENT STATUS: UNDER DEVELOPMENT.
 
 ::
 
-    This is demo app to show functionality following features:
-    1) Flask project created by using cookiecutter and https://github.com/sloria/cookiecutter-flask template
+    This is demo app to show functionality of following features:
+    1) Flask project created by using cookiecutter and .. _cookiecutter-flask: https://github.com/sloria/cookiecutter-flask template
     2) Using Pandas and Numpy to load data of 5M+ vehicles from finnish Trafi into local MongoDB.
     3) Grouping data by municipal and by municipal+year and calculating percentiles (quantile) for Co2, power and mileage
     4) Simple API to share grouped data
@@ -31,16 +31,10 @@ Installation
     # Loads data from Trafi into local MongoDB
     python download_trafidata.py
 
-    # Groups data and calculates percentiles(quantiles)
+    # Groups data and calculates percentile(quantile)
     python load_trafidata.py
 
     python manage.py server
-
-
-Deployment
-----------
-
-In your production environment, make sure the ``TRAFIDEMO_ENV`` environment variable is set to ``"prod"``.
 
 
 Shell
