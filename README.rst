@@ -28,8 +28,11 @@ Installation
     python manage.py db migrate
     python manage.py db upgrade
 
-    python download_trafidata.py # Loads data from Trafi into local MongoDB
-    python load_trafidata.py # Groups data and calculates percentiles(quantiles)
+    # Loads data from Trafi into local MongoDB
+    python download_trafidata.py
+
+    # Groups data and calculates percentiles(quantiles)
+    python load_trafidata.py
 
     python manage.py server
 
