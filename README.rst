@@ -5,6 +5,7 @@ Trafidemo
 CURRENT STATUS: UNDER DEVELOPMENT. DEMO NOT FULLY WORKING
 
 ::
+
     This is demo app to show functionality of several features:
     1) Flask with cookiecutter-flask project template
     2) Loading vehicle data (zip, csv and excel formats) from finnish Trafi into local MongoDB
